@@ -2,7 +2,7 @@
 locals {
   environment_variables = { foo = "bar" }
   tags = {template = "tf-modules", service = "lambda"}
-  layers = [""]
+  layers = ["test"]
 }
 
 resource "aws_lambda_function" "this" {

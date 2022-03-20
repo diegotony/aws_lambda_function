@@ -28,7 +28,6 @@ variable "environment_variables" {
 
 variable "layers" {
     type = any
-    default = ["test"]
     description = "(optional) describe your variable"
 }
 
