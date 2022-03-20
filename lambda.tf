@@ -2,6 +2,7 @@
 locals {
   environment_variables = { foo = "bar" }
   tags = {template = "tf-modules", service = "lambda"}
+  layers = []
 }
 
 resource "aws_lambda_function" "this" {
@@ -10,7 +11,7 @@ resource "aws_lambda_function" "this" {
   role          = aws_iam_role.lambda_exec.arn
   runtime       = var.runtime
   handler       = var.handler
-  layers        = var.layers
+  layers        = merge(var.layers,local.layers) 
 
   environment {
     variables = merge(var.environment_variables, local.environment_variables)
