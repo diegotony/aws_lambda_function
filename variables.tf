@@ -31,6 +31,11 @@ variable "environment_variables" {
     description = "(optional) describe your variable"
 }
 
+variable "layers" {
+    type = list(string)
+    default = []
+    description = "(optional) describe your variable"
+}
 
 variable "tags" {
     type = map
