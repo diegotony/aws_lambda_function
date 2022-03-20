@@ -25,7 +25,7 @@ variable "handler" {
 
 variable "environment_variables" {
     type = map
-    ddefault = {
+    default = {
         "abra" = "kadabra"
     }
     description = "(optional) describe your variable"
