@@ -24,11 +24,11 @@ variable "handler" {
 }
 
 variable "environment_variables" {
-    type = map()
+    type = any()
     description = "(optional) describe your variable"
 }
 
 variable "layers" {
-    type = list()
+    type = any()
     description = "(optional) describe your variable"
 }
