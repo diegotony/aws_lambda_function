@@ -24,11 +24,14 @@ variable "handler" {
 }
 
 variable "environment_variables" {
-    type = any()
+    type = map
+    ddefault = {
+        "abra" = "kadabra"
+    }
     description = "(optional) describe your variable"
 }
 
 variable "layers" {
-    type = any()
+    type = list(string)
     description = "(optional) describe your variable"
 }
