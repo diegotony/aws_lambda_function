@@ -3,11 +3,6 @@ variable "source_dir" {
     description = "source dir"
 }
 
-variable "output_path" {
-    type = string
-    description = "output path"
-}
-
 variable "function_name" {
     type = string
     description = "function name"
