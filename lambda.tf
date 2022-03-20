@@ -11,7 +11,7 @@ resource "aws_lambda_function" "this" {
   role          = aws_iam_role.lambda_exec.arn
   runtime       = var.runtime
   handler       = var.handler
-  layers        = merge(local.layers) 
+  layers        = local.layers 
 
   environment {
     variables = merge(var.environment_variables, local.environment_variables)
