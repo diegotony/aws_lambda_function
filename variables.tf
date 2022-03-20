@@ -35,3 +35,8 @@ variable "layers" {
     type = list(string)
     description = "(optional) describe your variable"
 }
+
+variable "tags" {
+    type = map
+    description = "tags"
+}
