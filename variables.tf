@@ -33,7 +33,7 @@ variable "environment_variables" {
 
 variable "layers" {
     type = list(string)
-    default = []
+    default = null
     description = "(optional) describe your variable"
 }
 
