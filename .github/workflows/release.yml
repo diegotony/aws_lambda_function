@@ -8,6 +8,8 @@ on:
 jobs:
   fmt:
     uses: diegotony/gh-pipelines/.github/workflows/terraform-fmt.yml@main
+  docs:
+    uses: diegotony/gh-pipelines/.github/workflows/terraform-tfdocs.yml@main
   release:
     needs: fmt
     uses: diegotony/gh-pipelines/.github/workflows/sm-release.yml@main
