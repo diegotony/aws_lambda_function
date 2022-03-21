@@ -1,24 +1,20 @@
 variable "source_dir" {
   type        = string
-  default     = ""
   description = "source dir"
 }
 
 variable "function_name" {
   type        = string
-  default     = ""
   description = "function name"
 }
 
 variable "runtime" {
   type        = string
-  default     = ""
   description = "runtime"
 }
 
 variable "handler" {
   type        = string
-  default     = ""
   description = "handler"
 }
 
@@ -36,7 +32,6 @@ variable "layers" {
 
 variable "description" {
   type        = string
-  default     = ""
   description = "(optional) describe your variable"
 }
 
