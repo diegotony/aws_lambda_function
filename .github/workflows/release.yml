@@ -9,5 +9,6 @@ jobs:
   fmt:
     uses: diegotony/gh-pipelines/.github/workflows/terraform-fmt.yml@main
   release:
-    uses: diegotony/gh-pipelines/.github/workflows/sn-release.yml@main
+    uses: diegotony/gh-pipelines/.github/workflows/sm-release.yml@main
 
+g
