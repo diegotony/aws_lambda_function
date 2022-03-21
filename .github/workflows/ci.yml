@@ -7,4 +7,4 @@ on:
 
 jobs:
   validate:
-    uses: diegotony/gh-pipelines/terraform/validate.yml@main
+    uses: diegotony/gh-pipelines/.github/workflows/terraform/validate.yml@main
