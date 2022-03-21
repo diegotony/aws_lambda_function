@@ -1,24 +1,24 @@
 variable "source_dir" {
   type        = string
-  default = ""
+  default     = ""
   description = "source dir"
 }
 
 variable "function_name" {
   type        = string
-  default = ""
+  default     = ""
   description = "function name"
 }
 
 variable "runtime" {
   type        = string
-  default = ""
+  default     = ""
   description = "runtime"
 }
 
 variable "handler" {
   type        = string
-  default = ""
+  default     = ""
   description = "handler"
 }
 
