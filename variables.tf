@@ -6,7 +6,6 @@ variable "source_dir" {
 
 variable "function_name" {
   type        = string
-  default     = ""
   description = "function name"
 }
 
