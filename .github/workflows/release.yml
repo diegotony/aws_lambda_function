@@ -11,3 +11,5 @@ jobs:
   release:
     needs: fmt
     uses: diegotony/gh-pipelines/.github/workflows/sm-release.yml@main
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
