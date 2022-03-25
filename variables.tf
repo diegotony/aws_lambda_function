@@ -76,10 +76,12 @@ variable "tags" {
 
 variable "policies" {
   type        = list(string)
+  default = [  ]
   description = "The policies"
 }
 
 variable "list_sqs_event_source" {
+  default = [  ]
   type = list(object({
     batch_size       = string
     event_source_arn = string
@@ -90,6 +92,7 @@ variable "list_sqs_event_source" {
 }
 
 variable "list_dynamodb_event_source" {
+  default = [  ]
   type = list(object({
     batch_size        = string
     event_source_arn  = string
