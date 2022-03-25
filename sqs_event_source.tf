@@ -11,7 +11,7 @@ resource "aws_lambda_event_source_mapping" "sqs" {
 }
 
 
-resource "aws_lambda_event_source_mapping" "sqs" {
+resource "aws_lambda_event_source_mapping" "dnyamodb" {
   count             = length(var.list_dynamodb_event_source)
   event_source_arn  = var.list_dynamodb_event_source[count.index].event_source_arn
   function_name     = aws_lambda_function.this.arn
