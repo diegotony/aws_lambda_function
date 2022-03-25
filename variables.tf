@@ -73,3 +73,29 @@ variable "tags" {
   }
   description = "tags"
 }
+
+variable "policies" {
+  type        = list(string)
+  description = "The policies"
+}
+
+variable "list_sqs_event_source" {
+  type = list(object({
+    batch_size       = string
+    event_source_arn = string
+    enabled          = bool
+    pattern          = string
+  }))
+  description = "List Event Queues queues"
+}
+
+variable "list_dynamodb_event_source" {
+  type = list(object({
+    batch_size        = string
+    event_source_arn  = string
+    enabled           = bool
+    starting_position = string
+  }))
+  description = "List Event Queues queues"
+}
+
