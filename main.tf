@@ -1,8 +1,8 @@
 
 locals {
-  tags                  = { template = "tf-modules", service = "lambda" }
-  layers                = []
-  description           = ""
+  tags        = { template = "tf-modules", service = "lambda" }
+  layers      = []
+  description = ""
 }
 
 resource "aws_lambda_function" "this" {
