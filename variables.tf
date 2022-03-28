@@ -19,9 +19,10 @@ variable "handler" {
 }
 
 variable "environment_variables" {
-  type        = map(any)
-  default     = {"foo":"bar"}
-  description = "(optional) describe your variable"
+  type = list(object({
+    variables = map(string)
+  }))
+  default = []
 }
 
 variable "layers" {
