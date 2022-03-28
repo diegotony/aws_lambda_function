@@ -1,6 +1,5 @@
 
 locals {
-  environment_variables = {}
   tags                  = { template = "tf-modules", service = "lambda" }
   layers                = []
   description           = ""
@@ -20,10 +19,14 @@ resource "aws_lambda_function" "this" {
   package_type  = var.package_type
   timeout       = var.timeout
 
-  environment {
-    variables = var.environment_variables == tolist([""]) ? merge(var.environment_variables, local.environment_variables) : null
-  }
 
+  dynamic "environment" {
+    for_each = var.environment_variables
+
+    content {
+      variables = environment.value.variables
+    }
+  }
   tags = merge(var.tags, local.tags)
 
 }
