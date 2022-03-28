@@ -8,6 +8,7 @@ locals {
 resource "aws_lambda_function" "this" {
   function_name = var.function_name
   filename      = data.archive_file.zip.output_path
+  source_code_hash = filebase64sha256("${ data.archive_file.zip.output_path}")
   role          = aws_iam_role.lambda_exec.arn
   runtime       = var.runtime
   handler       = var.handler
