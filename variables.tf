@@ -20,7 +20,7 @@ variable "handler" {
 
 variable "environment_variables" {
   type        = map(any)
-  default     = {}
+  default     = {"foo":"bar"}
   description = "(optional) describe your variable"
 }
 
