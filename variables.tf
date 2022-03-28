@@ -24,7 +24,7 @@ variable "environment_variables" {
   }))
   default = [{
     variables = {
-      foo = "bar"
+      foo   = "bar"
       perro = "gato"
     }
   }]
@@ -40,7 +40,6 @@ variable "description" {
   type        = string
   description = "(optional) describe your variable"
 }
-
 
 variable "architectures" {
   type        = list(string)
