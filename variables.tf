@@ -20,7 +20,7 @@ variable "handler" {
 
 variable "environment_variables" {
   type        = map(any)
-  default     = {}
+  default     = {"foo":"bar"}
   description = "(optional) describe your variable"
 }
 
@@ -92,7 +92,7 @@ variable "list_sqs_event_source" {
 }
 
 variable "list_dynamodb_event_source" {
-  default = [  ]
+  default = []
   type = list(object({
     batch_size        = string
     event_source_arn  = string
