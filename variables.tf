@@ -22,7 +22,12 @@ variable "environment_variables" {
   type = list(object({
     variables = map(string)
   }))
-  default = []
+  default = [{
+    variables = {
+      foo = "bar"
+      perro = "gato"
+    }
+  }]
 }
 
 variable "layers" {
