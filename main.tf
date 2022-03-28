@@ -1,6 +1,5 @@
 
 locals {
-  environment_variables = var.environment_variables == null ? [] : [var.environment_variables]
   tags                  = { template = "tf-modules", service = "lambda" }
   layers                = []
   description           = ""
