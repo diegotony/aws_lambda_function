@@ -107,3 +107,7 @@ variable "list_dynamodb_event_source" {
   description = "List Event Queues queues"
 }
 
+variable "cloudwatch_event_rule" {
+  type = object({rate = string})
+  description = "(optional) describe your variable"
+}
