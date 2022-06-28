@@ -18,16 +18,11 @@ variable "handler" {
   description = "handler"
 }
 
-variable "environment_variables" {
-  type = list(object({
-    variables = map(string)
-  }))
-  default = [{
-    variables = {
-      foo   = "bar"
-      perro = "gato"
-    }
-  }]
+variable "environment" {
+  type = any
+  default = {
+    foo   = "bar"
+  }
 }
 
 variable "layers" {
@@ -39,6 +34,7 @@ variable "layers" {
 variable "description" {
   type        = string
   description = "(optional) describe your variable"
+  default     = ""
 }
 
 variable "architectures" {
@@ -107,7 +103,8 @@ variable "list_dynamodb_event_source" {
   description = "List Event Queues queues"
 }
 
-variable "cloudwatch_event_rule" {
-  type = object({rate = string})
+variable "schedule_expression" {
+  type = string
+  default = ""
   description = "(optional) describe your variable"
 }
