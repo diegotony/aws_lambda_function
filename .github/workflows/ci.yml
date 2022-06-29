@@ -26,6 +26,6 @@ jobs:
 
   semantic-release:
     uses: diegotony/gh-pipelines/.github/workflows/semantic-release.yml@main
-    if: github.ref_name == 'main'
+    if: github.ref == 'refs/heads/main' 
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
