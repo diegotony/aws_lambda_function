@@ -1,5 +1,4 @@
-
-name: Terraform CI
+name: Terraform Worflow
 
 on: 
   pull_request:
@@ -10,9 +9,23 @@ on:
 jobs:
   terraform-validate:
     uses: diegotony/gh-pipelines/.github/workflows/terraform-validate.yml@main
+    if: github.event_name == 'pull_request'
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  terraform-plugin-tfsec:
+    if: github.event_name == 'pull_request'
+    uses: diegotony/gh-pipelines/.github/workflows/terraform-plugin-tfsec.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
   terraform-plugin-tfdocs:
     needs: terraform-validate
+    if: github.event_name == 'pull_request'
     uses: diegotony/gh-pipelines/.github/workflows/terraform-plugin-tfdocs.yml@main
+
+  semantic-release:
+    uses: diegotony/gh-pipelines/.github/workflows/semantic-release.yml@main
+    if: github.ref_name == 'main'
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
